@@ -17,8 +17,3 @@ def requestQueryArgs() -> dict:
         argsDict.update({args[0]: args[1]})
 
     return argsDict
-
-if __name__ == "__main__":
-    s = "INSERT INTO testes VALUES ({id}{1}, 'a');"
-
-    print(re.findall("{[a-z0-9]+}", s))
