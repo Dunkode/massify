@@ -21,5 +21,3 @@ if __name__ == "__main__":
 
     con.executeQuery(query, queryArgs, qtd)
     con.close()
-
-    print("Fim")

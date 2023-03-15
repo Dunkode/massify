@@ -1,7 +1,7 @@
 import sqlite3
 import src.utils.queryBuilder as qb
 from os.path import exists
-
+import src.utils.logUtil as log
 class SqliteDAO():
     def __init__(self, db_dir) -> None:
         self.db_dir = db_dir
@@ -30,6 +30,8 @@ class SqliteDAO():
 
                 sql = qb.buildQuery(query, args)
                 self.cursor.executescript(sql)
+                
+                log.printProgress(qtdRows, i)
         except sqlite3.Error as error:
             print("Erro ao executar a query: " + str(error.args))
         except Exception as cvtError:
