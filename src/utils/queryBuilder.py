@@ -1,7 +1,7 @@
 import re
 
 def buildQuery(query : str, args : dict):
-    if len(re.findall("{[a-z0-9]+}", query)) == len(args):
+    if len(re.findall("{[a-zA-Z0-9]+}", query)) == len(args):
         return query.format_map(args)
     else:
         raise Exception("O número de argumentos informados e contidos na query está divergente")

@@ -5,7 +5,7 @@ def printProgress(limmit : int, index : int) -> None:
     n = (100*index) / limmit
     n = '{:.2f}'.format(n)
     sys.stdout.write('\r')
-    sys.stdout.write("PROGRESSO >> {}% (registro = {})".format(n, index))
+    sys.stdout.write("PROGRESSO >> {}% (registro = {})".format(n, index+1))
     sys.stdout.flush()
 
     if limmit == index:
